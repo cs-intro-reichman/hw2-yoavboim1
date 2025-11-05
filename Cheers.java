@@ -10,10 +10,10 @@ public class Cheers {
 
         String useAnLetters = "AEFHILMNORSX";
 
-        // Loop through each character of the word
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
-            String article = (useAnLetters.indexOf(ch) != -1) ? "an" : "a";
+            boolean useAn = useAnLetters.indexOf(ch) != -1;
+            String article = useAn ? "an" : "a";
             System.out.println("Give me " + article + " " + ch + ": " + ch + "!");
         }
 
