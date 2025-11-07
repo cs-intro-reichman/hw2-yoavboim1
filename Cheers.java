@@ -1,9 +1,9 @@
 public class Cheers {
         public static void main(String[] args) {
-                String name = args[0];
+                String nameToCheer = args[0];
                 String vowels = "AEFHILMNORSX";
 
-                for (char c : name.toCharArray()) {
+                for (char c : nameToCheer.toCharArray()) {
                         System.out.println(String.format("Give me %s %s: %s!", (vowels.indexOf(Character.toUpperCase(c)) != -1 ? "an" : "a "), Character.toUpperCase(c), Character.toUpperCase(c)));
                 }
 

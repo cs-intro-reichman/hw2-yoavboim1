@@ -1,10 +1,5 @@
 public class CalcPi {
     public static void main(String[] args) { 
-        if (args.length != 1) {
-            System.out.println("Usage: java CalcPi <number of terms>");
-            return;
-        }
-
         int n = Integer.parseInt(args[0]);
         double sum = 0.0;
 
