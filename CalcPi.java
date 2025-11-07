@@ -1,20 +1,26 @@
 public class CalcPi {
-    public static void main(String[] args) { 
-        int n = Integer.parseInt(args[0]);
-        double sum = 0.0;
+    public static void main(String[] args) {
+        int iterations = Integer.parseInt(args[0]);
+        System.out.println("π according to Java: " + Math.PI);
 
-        for (int i = 0; i < n; i++) {
-            double term = 1.0 / (2 * i + 1);
-            if (i % 2 == 0) {
-                sum += term;
+        double piApproximation = 0.0;
+        double denominator = 1.0;
+        boolean addTerm = true;
+
+        for (int i = 0; i < iterations; i++) {
+            double term = 1.0 / denominator;
+
+            if (addTerm) {
+                piApproximation += term;
             } else {
-                sum -= term;
+                piApproximation -= term;
             }
+
+            denominator += 2.0;
+            addTerm = !addTerm;
         }
 
-        double piApprox = sum * 4;
-
-        System.out.println("pi according to Java: " + Math.PI);
-        System.out.println("pi, approximated: " + piApprox);
+        piApproximation *= 4.0;
+        System.out.printf("π approximated:       %.15f%n", piApproximation);
     }
 }
