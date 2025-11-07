@@ -1,25 +1,16 @@
 public class Cheers {
-    public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("Usage: java Cheers <word> <repetitions>");
-            return;
+        public static void main(String[] args) {
+                String name = args[0];
+                String vowels = "AEFHILMNORSX";
+
+                for (char c : name.toCharArray()) {
+                        System.out.println(String.format("Give me %s %s: %s!", (vowels.indexOf(Character.toUpperCase(c)) != -1 ? "an" : "a "), Character.toUpperCase(c), Character.toUpperCase(c)));
+                }
+
+                int numberOfCheers = Integer.parseInt(args[1]);
+                System.out.println("What does that spell?");
+                for (int i = 0; i < numberOfCheers; i++) {
+                        System.out.println(String.format("%s!!!", args[0].toUpperCase()));
+                }
         }
-
-        String word = args[0].toUpperCase();
-        int repetitions = Integer.parseInt(args[1]);
-
-        String useAnLetters = "AEFHILMNORSX";
-
-        // Loop through each character of the word
-        for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            String article = (useAnLetters.indexOf(ch) != -1) ? "an" : "a";
-            System.out.println("Give me " + article + " " + ch + ": " + ch + "!");
-        }
-
-        System.out.println("What does that spell?");
-        for (int i = 0; i < repetitions; i++) {
-            System.out.println(word + "!!!");
-        }
-    }
 }
