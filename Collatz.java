@@ -1,3 +1,11 @@
+/*
+Feedback:
+Great work!
+Yam
+*/
+
+
+
 public class Collatz {
 
     public static void main(String[] args) {
@@ -35,3 +43,4 @@ public class Collatz {
         return number;
     }
 }
+
